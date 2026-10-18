@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f6f5f0" />
-  <meta name="description" content="Aravindh is a Bengaluru-based product designer creating clear, useful digital experiences for complex problems." />
-  <meta property="og:title" content="Aravindh — Product Designer" />
-  <meta property="og:description" content="Thoughtful product design for complex workflows and everyday moments." />
+  <meta name="description" content="Aravindhan B is a Bengaluru-based UX/UI Designer with 5+ years of visual design experience, focused on clean, user-friendly digital interfaces." />
+  <meta property="og:title" content="Aravindhan B — UX/UI Designer" />
+  <meta property="og:description" content="UX/UI Designer skilled in Figma, wireframing, responsive design, branding, and visual communication." />
   <meta property="og:type" content="website" />
-  <title>Aravindh — Product Designer</title>
+  <title>Aravindhan B — UX/UI Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -88,6 +88,25 @@
     .dash-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; font-size: 9px; color: #777b72; }
     .live-pill { display: inline-flex; align-items: center; gap: 5px; color: #527c35; font-weight: 700; }
     .live-pill:before { content:''; width:5px; height:5px; border-radius:50%; background:#6da744; }
+
+    .experience-list { display:grid; gap:14px; }
+    .experience-item { display:grid; grid-template-columns: minmax(150px,.38fr) 1fr; gap:24px; padding:24px 26px; background:var(--card); border:1px solid #e1e2da; border-radius:16px; }
+    .experience-date { color:var(--muted); font-size:12px; line-height:1.6; }
+    .experience-date strong { display:block; color:var(--ink); font-size:13px; margin-bottom:5px; }
+    .experience-content h3 { margin:0 0 5px; font-size:23px; }
+    .experience-content .company { color:#6c7067; font-size:12px; margin-bottom:12px; }
+    .experience-content p { color:var(--muted); font-size:13px; margin:0; }
+    .resume-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .resume-card { background:var(--card); border:1px solid #e1e2da; border-radius:16px; padding:24px; }
+    .resume-card h3 { font-size:21px; margin-bottom:18px; }
+    .resume-card p { color:var(--muted); font-size:13px; margin-bottom:14px; }
+    .resume-card p:last-child { margin-bottom:0; }
+    .skill-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .skill-pills span { display:inline-flex; padding:8px 11px; border:1px solid #e1e2da; border-radius:999px; font-size:11px; background:#fffefa; }
+    .contact-links { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+    .contact-details { margin:18px 0 0; color:#4f5c44; font-size:13px; }
+    .contact-details a { text-decoration:underline; text-underline-offset:3px; }
+
     .section { padding: 92px 0; }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
     .section-kicker { margin-bottom: 12px; color: #767970; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; font-weight: 700; }
@@ -186,6 +205,8 @@
       .float-note.top { left:8%; }
       .float-note.bottom { right:9%; }
       .about-grid { grid-template-columns:1fr; gap:30px; }
+      .experience-item { grid-template-columns:1fr; gap:8px; }
+      .resume-grid { grid-template-columns:1fr; }
       .about-heading { position:static; }
       .principles { margin-top:25px; }
       .process-grid { grid-template-columns:repeat(2,1fr); }
@@ -228,6 +249,8 @@
       .process-step:last-child { border-bottom:0; }
       .process-step h3 { margin-top:15px; }
       .contact-band { display:block; }
+      .contact-links { align-items:flex-start; gap:12px; }
+      .contact-links .button { margin-top:0; }
       .contact-band .button { margin-top:23px; }
       .footer-inner { flex-direction:column; align-items:flex-start; }
     }
@@ -240,8 +263,9 @@
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button>
       <nav class="nav-links" id="navigation" aria-label="Main navigation">
         <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="#approach">Approach</a>
+        <a href="#skills">Skills</a>
         <a class="nav-cta" href="#contact">Let's talk <span class="arrow">↗</span></a>
       </nav>
     </div>
@@ -251,17 +275,17 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="reveal">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> Product designer · Bengaluru, India</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> UX/UI Designer · Bengaluru, India</div>
           <h1>I make complex things feel <span class="marker">simple.</span></h1>
-          <p class="hero-copy">I’m Aravindh, a product designer with a visual-design foundation. I turn tangled workflows, real user needs, and business goals into digital experiences that feel clear, considered, and easy to use.</p>
+          <p class="hero-copy">I’m Aravindhan, a UX/UI Designer with 5+ years of visual design experience. I create clean, user-friendly digital interfaces, bringing together Figma, wireframing, responsive design, and a strong foundation in branding and communication.</p>
           <div class="hero-actions">
             <a class="button" href="#work">Explore selected work <span class="arrow">↓</span></a>
             <a class="text-link" href="#about">A little about me <span class="arrow">↗</span></a>
           </div>
           <div class="hero-meta">
-            <span>✳ Product thinking</span>
-            <span>↗ UX & UI</span>
-            <span>◌ Systems that scale</span>
+            <span>✳ User research</span>
+            <span>↗ Wireframing & prototyping</span>
+            <span>◌ Responsive UI</span>
           </div>
         </div>
         <div class="visual-stage reveal" aria-label="Abstract product dashboard illustration">
@@ -358,13 +382,30 @@
       </div>
     </section>
 
+
+    <section class="section" id="experience" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">02 / Experience</div><h2>Where I’ve worked.</h2></div>
+          <p class="section-intro">A visual-design foundation built over several roles, now focused on UX/UI and responsive digital experiences.</p>
+        </div>
+        <div class="experience-list">
+          <article class="experience-item reveal"><div class="experience-date"><strong>May 2025 – Present</strong>Bengaluru, India</div><div class="experience-content"><h3>UI/UX Designer</h3><div class="company">Oro Media Labs</div><p>Designed responsive web and mobile UI for internal platforms, improving task-flow clarity and visual consistency.</p></div></article>
+          <article class="experience-item reveal"><div class="experience-date"><strong>July 2022 – August 2023</strong>Bengaluru, India</div><div class="experience-content"><h3>Graphic Design Executive</h3><div class="company">Imarticus Learning</div><p>Created visual materials for hackathon promotions, supporting increased sign-ups and event engagement. Maintained brand consistency across print and digital media.</p></div></article>
+          <article class="experience-item reveal"><div class="experience-date"><strong>September 2019 – June 2022</strong>Bengaluru, India</div><div class="experience-content"><h3>Graphic Designer</h3><div class="company">Skillenza</div><p>Developed campaign creatives for tech challenges and hiring drives, and designed collateral for events and marketing initiatives.</p></div></article>
+          <article class="experience-item reveal"><div class="experience-date"><strong>March 2019 – August 2019</strong>Pune, India</div><div class="experience-content"><h3>Assistant Art Director</h3><div class="company">Advids</div><p>Produced storyboard visuals and 2D illustration assets for product explainers and social content, collaborating with animation and script teams.</p></div></article>
+          <article class="experience-item reveal"><div class="experience-date"><strong>July 2018 – February 2019</strong>Bengaluru, India</div><div class="experience-content"><h3>Graphic Designer</h3><div class="company">Map Systems</div><p>Illustrated concepts for educational and marketing print materials, with a focus on narrative and visual quality.</p></div></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-dark" id="about">
       <div class="wrap about-grid">
-        <div class="about-heading reveal"><div class="section-kicker">02 / A little about me</div><h2>Design is how I make sense of complexity.</h2></div>
+        <div class="about-heading reveal"><div class="section-kicker">03 / A little about me</div><h2>Design is how I make sense of complexity.</h2></div>
         <div class="about-copy reveal">
-          <p>My journey started in <strong>graphic design</strong>, where I learned to pay attention to visual hierarchy, composition, and detail. Moving into product design helped me connect those skills to a bigger question: how can a digital experience help someone get something important done?</p>
-          <p>Today, I work across UX and UI — structuring information, mapping flows, exploring interface patterns, and iterating on details that make products easier to understand. I’m especially interested in <strong>complex workflows and useful internal tools</strong>, where clarity can make a real difference to people's day-to-day work.</p>
-          <p>I value early alignment, thoughtful collaboration, and design decisions that can be explained — not just screens that look good in a presentation.</p>
+          <p>My background spans <strong>visual design, branding, and communication</strong>, and I’m now focused on UX/UI design. I bring strong visual fundamentals to the process of creating clean, user-friendly digital interfaces.</p>
+          <p>At Oro Media Labs, I design <strong>responsive web and mobile interfaces for internal platforms</strong>, with a focus on improving task-flow clarity and visual consistency. My earlier roles in graphic design strengthened my experience with campaigns, brand consistency, event collateral, storyboards, and illustration.</p>
+          <p>My core toolkit includes <strong>Figma, FigJam, Illustrator, Photoshop, and Jitter</strong>. I’m also familiar with front-end basics in HTML and CSS, helping me consider design details in the context of implementation.</p>
           <div class="principles">
             <div class="principle"><span class="principle-num">01</span><h3>Start with why</h3><p>Understand the people, context, and job before designing the interface.</p></div>
             <div class="principle"><span class="principle-num">02</span><h3>Make it legible</h3><p>Use hierarchy, language, and patterns to reduce unnecessary effort.</p></div>
@@ -377,7 +418,7 @@
     <section class="section" id="approach">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><div class="section-kicker">03 / My approach</div><h2>Curious first.<br />Precise by design.</h2></div>
+          <div><div class="section-kicker">04 / My approach</div><h2>Curious first.<br />Precise by design.</h2></div>
           <p class="section-intro">The process adapts to the problem. I aim to bring just enough structure to create shared understanding and move toward a useful solution.</p>
         </div>
         <div class="process-grid reveal">
@@ -433,18 +474,34 @@
       </div>
     </section>
 
+
+    <section class="section" id="skills" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">04 / Skills & education</div><h2>Tools for thoughtful design.</h2></div>
+          <p class="section-intro">From understanding user needs to shaping polished interfaces, supported by visual design fundamentals.</p>
+        </div>
+        <div class="resume-grid">
+          <div class="resume-card reveal"><h3>Design skills</h3><div class="skill-pills"><span>User research</span><span>User strategy</span><span>Wireframing</span><span>User testing</span><span>Prototyping</span><span>Illustration</span><span>Branding</span><span>Responsive design</span><span>Front-end basics: HTML & CSS</span></div></div>
+          <div class="resume-card reveal"><h3>Tools</h3><div class="skill-pills"><span>Figma</span><span>FigJam</span><span>Adobe Illustrator</span><span>Adobe Photoshop</span><span>Jitter</span></div><h3 style="margin-top:26px">Languages</h3><div class="skill-pills"><span>Tamil</span><span>English</span><span>Kannada</span><span>Hindi</span></div></div>
+          <div class="resume-card reveal"><h3>Education</h3><p><strong style="color:var(--ink)">Professional Bootcamp in UX/UI Design</strong><br>DesignBoat UX/UI School · Bengaluru<br>March 2025</p><p><strong style="color:var(--ink)">Bachelor of Science in Information Technology</strong><br>Hindusthan College of Arts and Science · Coimbatore<br>April 2016</p></div>
+          <div class="resume-card reveal"><h3>Find me online</h3><p>Explore my professional background and visual design work.</p><p><a class="text-link" href="https://www.linkedin.com/in/itsaravindh" target="_blank" rel="noreferrer">LinkedIn profile ↗</a></p><p><a class="text-link" href="https://www.behance.net/_Aravindh" target="_blank" rel="noreferrer">Behance portfolio ↗</a></p><p><a class="text-link" href="mailto:aravindrap11@gmail.com">aravindrap11@gmail.com ↗</a></p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact" style="padding-top:0">
       <div class="wrap">
         <div class="contact-band reveal">
-          <div><div class="section-kicker" style="color:#4e6240">04 / Get in touch</div><h2>Have a thoughtful problem to solve?</h2><p>I’d love to connect, exchange ideas, and explore how design can make things work better.</p></div>
-          <a class="button" href="https://github.com/Aravindh-ux" target="_blank" rel="noreferrer">Connect on GitHub <span class="arrow">↗</span></a>
+          <div><div class="section-kicker" style="color:#4e6240">05 / Get in touch</div><h2>Have a thoughtful problem to solve?</h2><p>I’d love to connect, exchange ideas, and explore how design can make things work better.</p></div>
+          <div class="contact-links"><a class="button" href="mailto:aravindrap11@gmail.com">Email me <span class="arrow">↗</span></a><a class="text-link" href="https://www.linkedin.com/in/itsaravindh" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="text-link" href="https://www.behance.net/_Aravindh" target="_blank" rel="noreferrer">Behance ↗</a></div><p class="contact-details"><a href="tel:+918438479166">+91 84384 79166</a> · Bengaluru, India</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap footer-inner"><span>© <span id="year"></span> Aravindh. Designed with intention.</span><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://github.com/Aravindh-ux" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+    <div class="wrap footer-inner"><span>© <span id="year"></span> Aravindh. Designed with intention.</span><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://www.linkedin.com/in/itsaravindh" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.behance.net/_Aravindh" target="_blank" rel="noreferrer">Behance ↗</a></div></div>
   </footer>
   <script>
     const menuButton = document.querySelector('.menu-button');
