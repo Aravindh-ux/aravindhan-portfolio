@@ -115,7 +115,10 @@
     .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
     .project-card { min-width: 0; overflow: hidden; background: var(--card); border: 1px solid #e1e2da; border-radius: var(--radius); transition: transform .25s, box-shadow .25s; }
     .project-card:hover { transform: translateY(-5px); box-shadow: 0 17px 40px rgba(25,27,24,.07); }
-    .project-art { min-height: 265px; position: relative; overflow: hidden; display: grid; place-items: center; }
+    .project-art { min-height: 265px; position: relative; overflow: hidden; display: grid; place-items: center; background-size: cover; background-position: center; }
+    .project-art.behance-art:before { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.02)); }
+    .project-art.behance-art > :not(.art-tag):not(.art-number) { display:none; }
+    .project-art.behance-art .art-tag, .project-art.behance-art .art-number { z-index:2; }
     .art-green { background: #e3edda; }
     .art-lavender { background: #e4defb; }
     .art-peach { background: #f7dfce; }
@@ -314,9 +317,9 @@
 
         <div class="work-grid">
           <article class="project-card reveal">
-            <a href="#case-service" aria-label="Read about the service health dashboard project">
-              <div class="project-art art-green">
-                <span class="art-tag">Enterprise · Internal tools</span><span class="art-number">01</span>
+            <a href="https://www.behance.net/gallery/222140685/Crypto-Exchange-Dashboard-UIUX" target="_blank" rel="noreferrer" aria-label="View Crypto Exchange Dashboard on Behance">
+              <div class="project-art art-green behance-art" style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/92503f222140685.Y3JvcCwxMDU4LDgyOCwxNzAsMjA.png')">
+                <span class="art-tag">Dashboard · UI/UX</span><span class="art-number">01</span>
                 <div class="mini-window">
                   <div class="window-chrome"><i></i><i></i><i></i></div>
                   <div class="window-content"><div class="fake-sidebar"><b></b><span></span><span></span><span></span><span></span></div><div class="fake-main"><h4>Service health</h4><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-row"><span></span><span></span><span></span></div><div class="fake-status">● All services monitored <span>Updated just now</span></div><div class="fake-line" style="margin-top:11px"></div><div class="fake-line short"></div></div></div>
@@ -324,17 +327,17 @@
               </div>
               <div class="project-info">
                 <div class="project-meta"><span>Dashboard UX</span><span>Information hierarchy</span></div>
-                <h3>Service health, at a glance</h3>
-                <p>Making the status of multiple dependencies easier to scan, understand, and act on when something needs attention.</p>
+                <h3>Crypto Exchange Dashboard</h3>
+                <p>A dashboard interface concept exploring clear data hierarchy and visual organization for a crypto trading experience.</p>
                 <span class="project-link">Explore case study <span>↗</span></span>
               </div>
             </a>
           </article>
 
           <article class="project-card reveal">
-            <a href="#case-underwriting" aria-label="Read about the underwriting workflow project">
-              <div class="project-art art-lavender">
-                <span class="art-tag">B2B · CRM workflows</span><span class="art-number">02</span>
+            <a href="https://www.behance.net/gallery/222149349/Pledge-Screen-UIUX" target="_blank" rel="noreferrer" aria-label="View Pledge Screen on Behance">
+              <div class="project-art art-lavender behance-art" style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/660ca2222149349.Y3JvcCwzMDIzLDIzNjQsNTkxLDQzNA.png')">
+                <span class="art-tag">Mobile UI · UX</span><span class="art-number">02</span>
                 <div class="mini-window alt">
                   <div class="window-chrome"><i></i><i></i><i></i></div>
                   <div class="window-content"><div class="fake-sidebar" style="background:#f2effc"><b style="background:#a59bdc"></b><span></span><span></span><span></span></div><div class="fake-main"><h4>Application review</h4><div class="fake-line short"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px"><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span></div><div class="fake-status" style="background:#f1effb;color:#6b5bb1">Next step clearly explained</div></div></div>
@@ -342,38 +345,38 @@
               </div>
               <div class="project-info">
                 <div class="project-meta"><span>Workflow design</span><span>Content & layout</span></div>
-                <h3>A more helpful underwriting journey</h3>
-                <p>Exploring clearer form states and a more supportive next step for applicants who don't qualify to continue.</p>
+                <h3>Pledge Screen</h3>
+                <p>A focused mobile interface concept designed to make a pledge flow feel clear, approachable, and easy to complete.</p>
                 <span class="project-link">Explore case study <span>↗</span></span>
               </div>
             </a>
           </article>
 
           <article class="project-card reveal">
-            <a href="#case-ai" aria-label="Read about the live AI roleplay interaction design project">
-              <div class="project-art art-blue">
-                <span class="art-tag">AI · Interaction design</span><span class="art-number">03</span>
+            <a href="https://www.behance.net/gallery/220548767/Enhancing-Home-Care-Through-Design-A-UX-Case-Study" target="_blank" rel="noreferrer" aria-label="View home care UX case study on Behance">
+              <div class="project-art art-blue behance-art" style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/d79851220548767.Y3JvcCwxMzgwLDEwODAsMTAsMA.png')">
+                <span class="art-tag">Healthcare · UX case study</span><span class="art-number">03</span>
                 <div class="phone"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-brand">ROLEPLAY / LIVE</div><div class="phone-copy">Practice a real conversation.</div><div class="phone-text">You're speaking with a customer who needs help choosing a solution.</div><div class="audio-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="phone-button">View live transcript</div><div class="phone-text" style="text-align:center">Pause · End session</div></div></div>
               </div>
               <div class="project-info">
                 <div class="project-meta"><span>AI experience</span><span>Live feedback</span></div>
-                <h3>Making AI roleplay feel present</h3>
-                <p>A live practice screen concept that balances conversation, speech feedback, transcript access, and user control.</p>
+                <h3>Enhancing Home Care Through Design</h3>
+                <p>A UX case study exploring how clearer communication and symptom management can support patients and caregivers at home.</p>
                 <span class="project-link">Explore case study <span>↗</span></span>
               </div>
             </a>
           </article>
 
           <article class="project-card reveal">
-            <a href="#case-care" aria-label="Read about the Aiora in-home care concept">
-              <div class="project-art art-peach">
-                <span class="art-tag">Healthcare · Concept</span><span class="art-number">04</span>
+            <a href="https://www.behance.net/gallery/220548031/Aiora-Revolutionising-Home-Care-Design-An-iOS-Focus" target="_blank" rel="noreferrer" aria-label="View Aiora iOS project on Behance">
+              <div class="project-art art-peach behance-art" style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/4eddc6220548031.Y3JvcCwyODMyLDIyMTUsNjg2LDUxMQ.png')">
+                <span class="art-tag">Healthcare · iOS design</span><span class="art-number">04</span>
                 <div class="care-card"><div class="care-top"><span>AIORA / CARE PLAN</span><span>Today ↗</span></div><div class="care-title">Support, one step<br />at a time.</div><div class="care-sub">A thoughtful overview for care at home.</div><div class="care-progress"><span></span></div><div class="care-list"><div><i></i> Review today's care plan</div><div><i></i> Keep family in the loop</div><div><i></i> Prepare for the next visit</div></div></div>
               </div>
               <div class="project-info">
                 <div class="project-meta"><span>Service design</span><span>Care coordination</span></div>
-                <h3>Aiora — care that feels more human</h3>
-                <p>A healthcare concept exploring how in-home palliative care information could feel calmer, more connected, and easier to navigate.</p>
+                <h3>Aiora — Home Care for iOS</h3>
+                <p>A home-care mobile experience concept focused on presenting care information in a calmer, more approachable way.</p>
                 <span class="project-link">Explore case study <span>↗</span></span>
               </div>
             </a>
