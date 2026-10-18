@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f5f0" />
+  <meta name="description" content="Aravindh is a Bengaluru-based product designer creating clear, useful digital experiences for complex problems." />
+  <meta property="og:title" content="Aravindh — Product Designer" />
+  <meta property="og:description" content="Thoughtful product design for complex workflows and everyday moments." />
+  <meta property="og:type" content="website" />
+  <title>Aravindh — Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f6f5f0;
+      --ink: #191b18;
+      --muted: #696c65;
+      --line: #dcded5;
+      --green: #caff68;
+      --green-dark: #24391a;
+      --lavender: #d9d3fb;
+      --peach: #f5c7a8;
+      --blue: #cfe6f1;
+      --card: #fffefa;
+      --radius: 22px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #557d2e; outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(246,245,240,.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(220,222,213,.7); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -.04em; }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--green); font-size: 14px; letter-spacing: -.08em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; font-size: 13px; color: #474a43; }
+    .nav-links a:not(.nav-cta):hover { color: #557d2e; }
+    .nav-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; background: var(--ink); color: white; border-radius: 999px; transition: transform .2s, background .2s; }
+    .nav-cta:hover { transform: translateY(-2px); background: #34382f; }
+    .menu-button { display: none; background: none; border: 0; font: inherit; cursor: pointer; padding: 10px; }
+    .hero { padding: 86px 0 92px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .14em; color: #65685f; }
+    .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: #77a647; box-shadow: 0 0 0 4px rgba(119,166,71,.12); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(40px, 7vw, 90px); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -.055em; }
+    h1 { margin: 25px 0 22px; max-width: 730px; font-size: clamp(46px, 6.2vw, 78px); line-height: .99; font-weight: 600; }
+    .marker { position: relative; z-index: 0; white-space: nowrap; }
+    .marker:after { content: ''; position: absolute; z-index: -1; left: -3px; right: -5px; bottom: 3px; height: 22%; background: var(--green); transform: rotate(-1.5deg); border-radius: 3px; }
+    .hero-copy { max-width: 535px; color: #555950; font-size: 17px; line-height: 1.75; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 49px; padding: 0 20px; border-radius: 999px; background: var(--ink); color: white; font-weight: 600; font-size: 13px; transition: transform .2s, box-shadow .2s; }
+    .button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(25,27,24,.12); }
+    .text-link { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 700; border-bottom: 1px solid #a8aca1; padding: 7px 0; }
+    .text-link:hover { border-color: var(--ink); }
+    .arrow { font-size: 17px; line-height: 1; }
+    .hero-meta { display: flex; gap: 25px; flex-wrap: wrap; margin-top: 42px; color: #777a72; text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 700; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+    .visual-stage { min-height: 455px; position: relative; display: grid; place-items: center; }
+    .orb { position: absolute; width: 355px; height: 355px; right: 3%; top: 8%; border-radius: 50%; background: var(--green); opacity: .92; }
+    .orb-ring { position: absolute; width: 402px; height: 402px; right: -1%; top: 3%; border: 1px solid rgba(25,27,24,.15); border-radius: 50%; }
+    .float-note { position: absolute; z-index: 3; display: flex; align-items: center; gap: 10px; padding: 12px 15px; border: 1px solid rgba(25,27,24,.09); background: rgba(255,254,250,.94); border-radius: 12px; box-shadow: 0 12px 30px rgba(25,27,24,.08); font-size: 11px; font-weight: 700; }
+    .float-note.top { top: 18px; left: -4px; transform: rotate(-5deg); }
+    .float-note.bottom { bottom: 24px; right: -5px; transform: rotate(4deg); }
+    .note-icon { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 7px; background: var(--lavender); font-size: 13px; }
+    .dashboard { position: relative; z-index: 2; width: min(100%, 390px); padding: 18px; border: 1px solid rgba(25,27,24,.13); border-radius: 19px; background: var(--card); box-shadow: 0 32px 90px rgba(37,46,24,.18); transform: rotate(-3deg); }
+    .dash-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+    .dash-title { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; }
+    .dash-label { font-size: 9px; color: #85897f; margin-top: 3px; }
+    .dash-avatar { width: 27px; height: 27px; border-radius: 50%; display: grid; place-items: center; background: var(--peach); font-size: 11px; font-weight: 700; }
+    .dash-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .kpi { border: 1px solid #ecece5; border-radius: 11px; padding: 13px; }
+    .kpi span { display: block; color: #777b72; font-size: 9px; }
+    .kpi strong { display: block; margin-top: 6px; font: 600 23px 'Space Grotesk', sans-serif; letter-spacing: -.06em; }
+    .kpi small { display: block; margin-top: 4px; color: #5c8b3e; font-size: 9px; }
+    .chart-box { margin-top: 12px; border: 1px solid #ecece5; border-radius: 11px; padding: 14px 12px 8px; }
+    .chart-head { display: flex; justify-content: space-between; align-items: center; font-size: 10px; font-weight: 700; }
+    .chart-head small { color: #888b83; font-weight: 500; }
+    .chart { display: flex; align-items: end; gap: 9px; height: 77px; padding-top: 12px; }
+    .bar { flex: 1; border-radius: 4px 4px 1px 1px; background: #d9e6ce; }
+    .bar:nth-child(2n) { background: #9ebe81; }
+    .bar:nth-child(3n) { background: #caff68; }
+    .dash-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; font-size: 9px; color: #777b72; }
+    .live-pill { display: inline-flex; align-items: center; gap: 5px; color: #527c35; font-weight: 700; }
+    .live-pill:before { content:''; width:5px; height:5px; border-radius:50%; background:#6da744; }
+    .section { padding: 92px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+    .section-kicker { margin-bottom: 12px; color: #767970; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; font-weight: 700; }
+    h2 { margin-bottom: 0; font-weight: 600; font-size: clamp(34px, 4.5vw, 54px); line-height: 1.05; }
+    .section-intro { max-width: 360px; color: var(--muted); font-size: 14px; margin: 0 0 3px; }
+    .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .project-card { min-width: 0; overflow: hidden; background: var(--card); border: 1px solid #e1e2da; border-radius: var(--radius); transition: transform .25s, box-shadow .25s; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 17px 40px rgba(25,27,24,.07); }
+    .project-art { min-height: 265px; position: relative; overflow: hidden; display: grid; place-items: center; }
+    .art-green { background: #e3edda; }
+    .art-lavender { background: #e4defb; }
+    .art-peach { background: #f7dfce; }
+    .art-blue { background: #dcecf2; }
+    .art-tag { position: absolute; top: 18px; left: 18px; padding: 7px 10px; background: rgba(255,254,250,.78); border: 1px solid rgba(25,27,24,.06); border-radius: 999px; font-size: 9px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .art-number { position: absolute; top: 18px; right: 20px; font: 600 12px 'Space Grotesk', sans-serif; color: rgba(25,27,24,.6); }
+    .mini-window { width: 76%; max-width: 405px; border: 1px solid rgba(25,27,24,.15); background: #fffefa; border-radius: 12px; box-shadow: 0 18px 45px rgba(25,27,24,.12); padding: 12px; transform: rotate(-3deg); }
+    .mini-window.alt { transform: rotate(3deg); width: 72%; }
+    .window-chrome { display: flex; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid #ecece5; }
+    .window-chrome i { display: block; width: 5px; height: 5px; background: #d6d8cf; border-radius: 50%; }
+    .window-content { display: grid; grid-template-columns: 62px 1fr; gap: 10px; padding-top: 12px; }
+    .fake-sidebar { min-height: 105px; border-radius: 5px; background: #f1f2eb; padding: 9px 6px; }
+    .fake-sidebar b { display:block; height:5px; width:28px; margin-bottom:10px; border-radius: 4px; background: #b8c0ad; }
+    .fake-sidebar span { display:block; height:4px; width:38px; margin:8px 0; border-radius:4px; background:#dedfd6; }
+    .fake-main h4 { margin: 0 0 10px; font: 700 11px 'Space Grotesk',sans-serif; }
+    .fake-line { height: 5px; margin: 6px 0; border-radius: 4px; background: #ebede5; }
+    .fake-line.short { width: 62%; }
+    .fake-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 11px; }
+    .fake-row span { height: 29px; border:1px solid #ecece5; border-radius:4px; background:#fbfbf7; }
+    .fake-status { margin-top: 9px; display:flex; align-items:center; justify-content:space-between; padding:7px; border-radius:5px; background:#edf5e8; color:#4d7138; font-size:7px; }
+    .phone { width: 130px; height: 216px; background:#20221f; padding:6px; border-radius:20px; box-shadow: 0 17px 35px rgba(25,27,24,.2); transform: rotate(7deg); }
+    .phone-screen { position:relative; height:100%; padding:12px 8px; overflow:hidden; background:#fffdfa; border-radius:15px; }
+    .phone-notch { width:42px; height:9px; background:#20221f; border-radius:8px; margin:-12px auto 12px; }
+    .phone-brand { font:700 9px 'Space Grotesk',sans-serif; margin-top:12px; }
+    .phone-copy { font:700 13px 'Space Grotesk',sans-serif; line-height:1.15; margin-top:12px; }
+    .phone-text { font-size:7px; color:#787b73; line-height:1.5; margin-top:7px; }
+    .phone-button { margin-top:11px; font-size:7px; font-weight:700; background:#caff68; border-radius:7px; padding:7px; text-align:center; }
+    .audio-wave { display:flex; align-items:center; justify-content:center; gap:3px; height:65px; }
+    .audio-wave i { display:block; width:3px; border-radius:5px; background:#7766cb; }
+    .audio-wave i:nth-child(1), .audio-wave i:nth-child(9) {height:11px}.audio-wave i:nth-child(2), .audio-wave i:nth-child(8){height:19px}.audio-wave i:nth-child(3), .audio-wave i:nth-child(7){height:29px}.audio-wave i:nth-child(4), .audio-wave i:nth-child(6){height:41px}.audio-wave i:nth-child(5){height:50px}
+    .care-card { width:74%; max-width:330px; padding:15px; border:1px solid rgba(25,27,24,.12); border-radius:13px; background:#fffefa; transform:rotate(-4deg); box-shadow:0 17px 35px rgba(25,27,24,.11); }
+    .care-top { display:flex; justify-content:space-between; align-items:center; font-size:8px; color:#74766e; }
+    .care-title { margin-top:18px; font:700 18px 'Space Grotesk',sans-serif; line-height:1.12; }
+    .care-sub { font-size:8px; color:#73766d; margin-top:7px; }
+    .care-progress { height:5px; margin-top:17px; background:#f0eee7; border-radius:6px; overflow:hidden; }
+    .care-progress span { display:block; width:68%; height:100%; background:#90b87c; border-radius:6px; }
+    .care-list { margin-top:14px; display:grid; gap:7px; }
+    .care-list div { display:flex; gap:7px; align-items:center; font-size:8px; padding:7px; background:#f7f6f0; border-radius:6px; }
+    .care-list i { width:11px; height:11px; border:1px solid #91b481; border-radius:50%; }
+    .project-info { padding: 24px 25px 26px; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+    .project-meta span { font-size: 10px; color: #686c63; padding: 5px 8px; border: 1px solid #e1e2da; border-radius: 999px; }
+    .project-info h3 { font-size: clamp(22px, 2.3vw, 29px); line-height: 1.08; margin-bottom: 10px; }
+    .project-info p { margin-bottom: 21px; color: #696c65; font-size: 13px; line-height: 1.65; max-width: 480px; }
+    .project-link { font-size: 12px; display: inline-flex; align-items: center; gap: 9px; font-weight: 700; }
+    .project-link span { display: grid; place-items: center; height: 25px; width: 25px; border-radius: 50%; border: 1px solid #cdd0c6; transition: background .2s; }
+    .project-link:hover span { background: var(--green); border-color: var(--green); }
+    .section-dark { background: #20231e; color: #f7f7f0; }
+    .section-dark .section-kicker { color: #aeb2a7; }
+    .section-dark .section-intro { color: #bfc2b9; }
+    .about-grid { display:grid; grid-template-columns: .82fr 1.18fr; gap: clamp(38px, 8vw, 110px); align-items:start; }
+    .about-heading { position:sticky; top:110px; }
+    .about-heading h2 { max-width:420px; }
+    .about-copy { color:#c2c5bc; font-size:16px; line-height:1.85; }
+    .about-copy p { margin-bottom:20px; }
+    .about-copy strong { color:#fffefa; font-weight:600; }
+    .principles { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:38px; }
+    .principle { padding:20px; border:1px solid #45483f; border-radius:14px; min-height:153px; }
+    .principle-num { color:var(--green); font:600 12px 'Space Grotesk',sans-serif; }
+    .principle h3 { margin:22px 0 7px; font-size:17px; letter-spacing:-.04em; }
+    .principle p { color:#b5b9ae; font-size:11px; line-height:1.6; margin:0; }
+    .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+    .process-step { padding:24px 20px 26px; min-height:190px; border-right:1px solid var(--line); }
+    .process-step:last-child { border-right:0; }
+    .process-step span { display:grid; place-items:center; width:31px; height:31px; background:var(--green); border-radius:50%; font:700 11px 'Space Grotesk',sans-serif; }
+    .process-step h3 { margin:22px 0 8px; font-size:19px; }
+    .process-step p { color:var(--muted); margin:0; font-size:12px; }
+    .contact-band { margin-top:30px; padding:clamp(30px,5vw,55px); border-radius:var(--radius); background:var(--green); color:var(--ink); display:flex; align-items:center; justify-content:space-between; gap:30px; }
+    .contact-band h2 { max-width:650px; font-size:clamp(31px,4.5vw,54px); }
+    .contact-band p { margin:14px 0 0; color:#4f5c44; font-size:14px; }
+    .contact-band .button { flex-shrink:0; background:var(--ink); color:#fff; }
+    footer { padding:28px 0; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; color:#777a72; font-size:11px; }
+    .footer-links { display:flex; gap:20px; }
+    .footer-links a:hover { color:var(--ink); }
+    .reveal { opacity:0; transform:translateY(16px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) { *,*:before,*:after { scroll-behavior:auto !important; transition:none !important; animation:none !important; } .reveal { opacity:1; transform:none; } }
+    @media (max-width: 850px) {
+      .hero { padding:65px 0 65px; }
+      .hero-grid { grid-template-columns:1fr; gap:22px; }
+      .hero-copy { max-width:620px; }
+      .visual-stage { min-height:410px; }
+      .dashboard { max-width:390px; }
+      .orb { right:17%; width:315px;height:315px; }
+      .orb-ring { right:13%; width:360px;height:360px; }
+      .float-note.top { left:8%; }
+      .float-note.bottom { right:9%; }
+      .about-grid { grid-template-columns:1fr; gap:30px; }
+      .about-heading { position:static; }
+      .principles { margin-top:25px; }
+      .process-grid { grid-template-columns:repeat(2,1fr); }
+      .process-step:nth-child(2) { border-right:0; }
+      .process-step:nth-child(-n+2) { border-bottom:1px solid var(--line); }
+    }
+    @media (max-width: 600px) {
+      .wrap { width:calc(100% - 34px); }
+      .nav { min-height:66px; }
+      .menu-button { display:block; }
+      .nav-links { display:none; position:absolute; top:65px; left:0; right:0; padding:18px 22px 22px; flex-direction:column; align-items:stretch; gap:2px; background:var(--paper); border-bottom:1px solid var(--line); }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 4px; }
+      .nav-links .nav-cta { justify-content:center; margin-top:8px; padding:12px; }
+      h1 { font-size:clamp(42px,12vw,62px); margin-top:20px; }
+      .hero { padding:51px 0 54px; }
+      .hero-copy { font-size:15px; }
+      .hero-meta { gap:14px; margin-top:30px; }
+      .visual-stage { min-height:345px; }
+      .dashboard { width:83%; padding:13px; }
+      .orb { width:250px;height:250px;right:7%;top:12%; }
+      .orb-ring { width:292px;height:292px;right:1%;top:6%; }
+      .float-note { font-size:9px; padding:9px 11px; }
+      .float-note.top { top:7px; left:0; }
+      .float-note.bottom { bottom:8px; right:0; }
+      .section { padding:65px 0; }
+      .section-head { display:block; margin-bottom:25px; }
+      .section-intro { margin-top:15px; }
+      .work-grid { grid-template-columns:1fr; gap:16px; }
+      .project-art { min-height:240px; }
+      .project-info { padding:20px; }
+      .project-info h3 { font-size:25px; }
+      .about-copy { font-size:14px; }
+      .principles { grid-template-columns:1fr; gap:9px; }
+      .principle { min-height:0; }
+      .principle h3 { margin-top:13px; }
+      .process-grid { grid-template-columns:1fr; }
+      .process-step { min-height:0; padding:21px; border-right:0; border-bottom:1px solid var(--line); }
+      .process-step:nth-child(3) { border-bottom:1px solid var(--line); }
+      .process-step:last-child { border-bottom:0; }
+      .process-step h3 { margin-top:15px; }
+      .contact-band { display:block; }
+      .contact-band .button { margin-top:23px; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Aravindh home"><span class="brand-mark">A.</span><span>aravindh<span style="color:#7eaa51">.</span></span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button>
+      <nav class="nav-links" id="navigation" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#approach">Approach</a>
+        <a class="nav-cta" href="#contact">Let's talk <span class="arrow">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Product designer · Bengaluru, India</div>
+          <h1>I make complex things feel <span class="marker">simple.</span></h1>
+          <p class="hero-copy">I’m Aravindh, a product designer with a visual-design foundation. I turn tangled workflows, real user needs, and business goals into digital experiences that feel clear, considered, and easy to use.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">Explore selected work <span class="arrow">↓</span></a>
+            <a class="text-link" href="#about">A little about me <span class="arrow">↗</span></a>
+          </div>
+          <div class="hero-meta">
+            <span>✳ Product thinking</span>
+            <span>↗ UX & UI</span>
+            <span>◌ Systems that scale</span>
+          </div>
+        </div>
+        <div class="visual-stage reveal" aria-label="Abstract product dashboard illustration">
+          <div class="orb"></div><div class="orb-ring"></div>
+          <div class="float-note top"><span class="note-icon">✳</span><span>Clarity over clutter</span></div>
+          <div class="dashboard">
+            <div class="dash-top"><div><div class="dash-title">Workspace overview</div><div class="dash-label">A little order in the complexity</div></div><div class="dash-avatar">A</div></div>
+            <div class="dash-kpis">
+              <div class="kpi"><span>Active services</span><strong>04</strong><small>● All systems visible</small></div>
+              <div class="kpi"><span>Open tasks</span><strong>12</strong><small>↗ Priorities in focus</small></div>
+            </div>
+            <div class="chart-box"><div class="chart-head">Activity at a glance <small>Last 7 days</small></div><div class="chart" aria-hidden="true"><i class="bar" style="height:30%"></i><i class="bar" style="height:55%"></i><i class="bar" style="height:43%"></i><i class="bar" style="height:75%"></i><i class="bar" style="height:62%"></i><i class="bar" style="height:88%"></i><i class="bar" style="height:70%"></i><i class="bar" style="height:95%"></i></div></div>
+            <div class="dash-bottom"><span>Designed around decisions</span><span class="live-pill">In focus</span></div>
+          </div>
+          <div class="float-note bottom"><span class="note-icon" style="background:#f5c7a8">↗</span><span>Useful by design</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">01 / Selected work</div><h2>Problems worth<br />making clearer.</h2></div>
+          <p class="section-intro">A selection of product design explorations across enterprise tools, AI interactions, and care experiences. Each project starts with understanding the problem, not decorating the screen.</p>
+        </div>
+
+        <div class="work-grid">
+          <article class="project-card reveal">
+            <a href="#case-service" aria-label="Read about the service health dashboard project">
+              <div class="project-art art-green">
+                <span class="art-tag">Enterprise · Internal tools</span><span class="art-number">01</span>
+                <div class="mini-window">
+                  <div class="window-chrome"><i></i><i></i><i></i></div>
+                  <div class="window-content"><div class="fake-sidebar"><b></b><span></span><span></span><span></span><span></span></div><div class="fake-main"><h4>Service health</h4><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-row"><span></span><span></span><span></span></div><div class="fake-status">● All services monitored <span>Updated just now</span></div><div class="fake-line" style="margin-top:11px"></div><div class="fake-line short"></div></div></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta"><span>Dashboard UX</span><span>Information hierarchy</span></div>
+                <h3>Service health, at a glance</h3>
+                <p>Making the status of multiple dependencies easier to scan, understand, and act on when something needs attention.</p>
+                <span class="project-link">Explore case study <span>↗</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <a href="#case-underwriting" aria-label="Read about the underwriting workflow project">
+              <div class="project-art art-lavender">
+                <span class="art-tag">B2B · CRM workflows</span><span class="art-number">02</span>
+                <div class="mini-window alt">
+                  <div class="window-chrome"><i></i><i></i><i></i></div>
+                  <div class="window-content"><div class="fake-sidebar" style="background:#f2effc"><b style="background:#a59bdc"></b><span></span><span></span><span></span></div><div class="fake-main"><h4>Application review</h4><div class="fake-line short"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px"><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span><span style="height:22px;border:1px solid #e4e0f1;border-radius:4px"></span></div><div class="fake-status" style="background:#f1effb;color:#6b5bb1">Next step clearly explained</div></div></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta"><span>Workflow design</span><span>Content & layout</span></div>
+                <h3>A more helpful underwriting journey</h3>
+                <p>Exploring clearer form states and a more supportive next step for applicants who don't qualify to continue.</p>
+                <span class="project-link">Explore case study <span>↗</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <a href="#case-ai" aria-label="Read about the live AI roleplay interaction design project">
+              <div class="project-art art-blue">
+                <span class="art-tag">AI · Interaction design</span><span class="art-number">03</span>
+                <div class="phone"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-brand">ROLEPLAY / LIVE</div><div class="phone-copy">Practice a real conversation.</div><div class="phone-text">You're speaking with a customer who needs help choosing a solution.</div><div class="audio-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="phone-button">View live transcript</div><div class="phone-text" style="text-align:center">Pause · End session</div></div></div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta"><span>AI experience</span><span>Live feedback</span></div>
+                <h3>Making AI roleplay feel present</h3>
+                <p>A live practice screen concept that balances conversation, speech feedback, transcript access, and user control.</p>
+                <span class="project-link">Explore case study <span>↗</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <a href="#case-care" aria-label="Read about the Aiora in-home care concept">
+              <div class="project-art art-peach">
+                <span class="art-tag">Healthcare · Concept</span><span class="art-number">04</span>
+                <div class="care-card"><div class="care-top"><span>AIORA / CARE PLAN</span><span>Today ↗</span></div><div class="care-title">Support, one step<br />at a time.</div><div class="care-sub">A thoughtful overview for care at home.</div><div class="care-progress"><span></span></div><div class="care-list"><div><i></i> Review today's care plan</div><div><i></i> Keep family in the loop</div><div><i></i> Prepare for the next visit</div></div></div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta"><span>Service design</span><span>Care coordination</span></div>
+                <h3>Aiora — care that feels more human</h3>
+                <p>A healthcare concept exploring how in-home palliative care information could feel calmer, more connected, and easier to navigate.</p>
+                <span class="project-link">Explore case study <span>↗</span></span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="about">
+      <div class="wrap about-grid">
+        <div class="about-heading reveal"><div class="section-kicker">02 / A little about me</div><h2>Design is how I make sense of complexity.</h2></div>
+        <div class="about-copy reveal">
+          <p>My journey started in <strong>graphic design</strong>, where I learned to pay attention to visual hierarchy, composition, and detail. Moving into product design helped me connect those skills to a bigger question: how can a digital experience help someone get something important done?</p>
+          <p>Today, I work across UX and UI — structuring information, mapping flows, exploring interface patterns, and iterating on details that make products easier to understand. I’m especially interested in <strong>complex workflows and useful internal tools</strong>, where clarity can make a real difference to people's day-to-day work.</p>
+          <p>I value early alignment, thoughtful collaboration, and design decisions that can be explained — not just screens that look good in a presentation.</p>
+          <div class="principles">
+            <div class="principle"><span class="principle-num">01</span><h3>Start with why</h3><p>Understand the people, context, and job before designing the interface.</p></div>
+            <div class="principle"><span class="principle-num">02</span><h3>Make it legible</h3><p>Use hierarchy, language, and patterns to reduce unnecessary effort.</p></div>
+            <div class="principle"><span class="principle-num">03</span><h3>Iterate together</h3><p>Share work early, learn from feedback, and improve with intention.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">03 / My approach</div><h2>Curious first.<br />Precise by design.</h2></div>
+          <p class="section-intro">The process adapts to the problem. I aim to bring just enough structure to create shared understanding and move toward a useful solution.</p>
+        </div>
+        <div class="process-grid reveal">
+          <div class="process-step"><span>01</span><h3>Discover</h3><p>Gather context, understand users and constraints, and define what success should mean.</p></div>
+          <div class="process-step"><span>02</span><h3>Frame</h3><p>Map the journey, sort the information, and identify the moments that matter most.</p></div>
+          <div class="process-step"><span>03</span><h3>Explore</h3><p>Sketch flows and layouts, compare options, and make ideas tangible early.</p></div>
+          <div class="process-step"><span>04</span><h3>Refine</h3><p>Use feedback and edge cases to improve the details and prepare a clear handoff.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case-service" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">Case study / 01</div><h2>Service health dashboard</h2></div><p class="section-intro">Enterprise internal tooling · Dashboard UX</p></div>
+        <div class="work-grid">
+          <div class="project-card" style="padding:26px"><div class="section-kicker">The challenge</div><h3 style="font-size:25px">Make system status easy to read quickly.</h3><p style="color:var(--muted);font-size:14px">Operational teams need to know whether critical dependencies are active and when they were last checked. A status view should make the current state obvious without forcing people to interpret scattered signals.</p></div>
+          <div class="project-card" style="padding:26px"><div class="section-kicker">Design direction</div><h3 style="font-size:25px">Show the answer before the detail.</h3><p style="color:var(--muted);font-size:14px">The proposed dashboard emphasizes a clear active/down state, last-checked time, and a consistent service card structure. The focus is service health only, keeping data discrepancies and unrelated monitoring outside the scope.</p></div>
+        </div>
+        <div style="margin-top:18px;color:var(--muted);font-size:12px">Current status: wireframe exploration. Final implementation and measured outcomes have not been claimed.</div>
+      </div>
+    </section>
+
+    <section class="section" id="case-underwriting" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">Case study / 02</div><h2>A clearer underwriting journey</h2></div><p class="section-intro">B2B CRM · Form and feedback states</p></div>
+        <div class="work-grid">
+          <div class="project-card" style="padding:26px"><div class="section-kicker">The challenge</div><h3 style="font-size:25px">A dead end should still explain what happens next.</h3><p style="color:var(--muted);font-size:14px">When an applicant cannot continue, a generic end state can create uncertainty. The experience needs to communicate the result respectfully, keep the message focused, and help the person understand the next step.</p></div>
+          <div class="project-card" style="padding:26px"><div class="section-kicker">Design direction</div><h3 style="font-size:25px">Compare layouts around the content.</h3><p style="color:var(--muted);font-size:14px">Three directions were explored for a non-qualification experience: an illustration-led layout, a compact layout, and a content-first variation. The design was refined through feedback, with attention to hierarchy and readability.</p></div>
+        </div>
+        <div style="margin-top:18px;color:var(--muted);font-size:12px">Focus: communicating the outcome clearly and consistently. No unverified conversion or completion metrics are claimed.</div>
+      </div>
+    </section>
+
+    <section class="section" id="case-ai" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">Concept / 03</div><h2>Live AI roleplay</h2></div><p class="section-intro">AI product concept · Real-time interaction</p></div>
+        <div class="work-grid">
+          <div class="project-card" style="padding:26px"><div class="section-kicker">The challenge</div><h3 style="font-size:25px">Make a simulated conversation feel live.</h3><p style="color:var(--muted);font-size:14px">A roleplay screen has to support two different needs at once: staying present in the conversation and understanding how the session is going. Too much UI can interrupt practice; too little can leave users unsure what is happening.</p></div>
+          <div class="project-card" style="padding:26px"><div class="section-kicker">Design direction</div><h3 style="font-size:25px">Keep feedback close, controls easy to reach.</h3><p style="color:var(--muted);font-size:14px">The concept brings the AI persona and scenario into view, uses an audio waveform to signal live speech, keeps transcript access available, and makes pause and exit controls discoverable without dominating the conversation.</p></div>
+        </div>
+        <div style="margin-top:18px;color:var(--muted);font-size:12px">Exploratory single-screen concept; no live AI functionality is included in this portfolio page.</div>
+      </div>
+    </section>
+
+    <section class="section" id="case-care" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">Concept / 04</div><h2>Aiora — in-home care</h2></div><p class="section-intro">Healthcare concept · Care coordination</p></div>
+        <div class="work-grid">
+          <div class="project-card" style="padding:26px"><div class="section-kicker">The opportunity</div><h3 style="font-size:25px">Support a difficult time with calmer experiences.</h3><p style="color:var(--muted);font-size:14px">People coordinating palliative care at home may need to navigate sensitive information, routines, and support from different people. A digital experience should feel reassuring and help make the next step understandable.</p></div>
+          <div class="project-card" style="padding:26px"><div class="section-kicker">Design direction</div><h3 style="font-size:25px">Bring important tasks into one gentle overview.</h3><p style="color:var(--muted);font-size:14px">The concept explores a focused care overview, plain-language task prompts, and a calmer visual system. The intent is to make coordination feel more manageable while recognizing the sensitivity of the care context.</p></div>
+        </div>
+        <div style="margin-top:18px;color:var(--muted);font-size:12px">Concept work. The content on this page does not represent clinical guidance or a deployed healthcare service.</div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" style="padding-top:0">
+      <div class="wrap">
+        <div class="contact-band reveal">
+          <div><div class="section-kicker" style="color:#4e6240">04 / Get in touch</div><h2>Have a thoughtful problem to solve?</h2><p>I’d love to connect, exchange ideas, and explore how design can make things work better.</p></div>
+          <a class="button" href="https://github.com/Aravindh-ux" target="_blank" rel="noreferrer">Connect on GitHub <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><span>© <span id="year"></span> Aravindh. Designed with intention.</span><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://github.com/Aravindh-ux" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const nav = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menuButton.textContent = open ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      menuButton.textContent = '☰';
+    }));
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
